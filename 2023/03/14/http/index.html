@@ -19,23 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"iwefwkg.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://iwefwkg.github.io/index.html">
+    <meta name="description" content="简单的HTTP协议HTTP组成由客户端向服务器发送请求报文，服务器传回响应报文。请求报文由请求方法，请求URI，协议版本，可选的请求首部字段和实体内容组成。响应报文基本上由协议版本，状态码（表示请求成功或失败的数字代码），用以解释状态码的原因短语，可选的响应首部字段以及实体主体构成。HTTP协议用URI使客户端定位互联网上的资源，请求URI的方式有很多种一GET http:&#x2F;&#x2F;hackr.jp&#x2F;i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http">
+<meta property="og:url" content="http://iwefwkg.github.io/2023/03/14/http/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简单的HTTP协议HTTP组成由客户端向服务器发送请求报文，服务器传回响应报文。请求报文由请求方法，请求URI，协议版本，可选的请求首部字段和实体内容组成。响应报文基本上由协议版本，状态码（表示请求成功或失败的数字代码），用以解释状态码的原因短语，可选的响应首部字段以及实体主体构成。HTTP协议用URI使客户端定位互联网上的资源，请求URI的方式有很多种一GET http:&#x2F;&#x2F;hackr.jp&#x2F;i">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-14T12:29:17.000Z">
+<meta property="article:modified_time" content="2023-03-14T13:16:07.136Z">
 <meta property="article:author" content="mxm">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://iwefwkg.github.io/">
+<link rel="canonical" href="http://iwefwkg.github.io/2023/03/14/http/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://iwefwkg.github.io/2023/03/14/http/","path":"2023/03/14/http/","title":"http"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo</title>
+<title>http | Hexo</title>
   
 
 
@@ -65,7 +69,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Hexo</h1>
+      <p class="site-title">Hexo</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -87,7 +91,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -100,6 +104,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84HTTP%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.</span> <span class="nav-text">简单的HTTP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E7%BB%84%E6%88%90"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.2.</span> <span class="nav-text">持久连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E7%BA%BF%E5%8C%96"><span class="nav-number">1.3.</span> <span class="nav-text">管线化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie"><span class="nav-number">1.4.</span> <span class="nav-text">cookie</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -129,16 +134,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://iwefwkg.github.io/2023/03/14/http/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -152,13 +158,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="name" content="http | Hexo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/14/http/" class="post-title-link" itemprop="url">http</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          http
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -182,12 +188,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="简单的HTTP协议"><a href="#简单的HTTP协议" class="headerlink" title="简单的HTTP协议"></a>简单的HTTP协议</h1><h2 id="HTTP组成"><a href="#HTTP组成" class="headerlink" title="HTTP组成"></a>HTTP组成</h2><p>由客户端向服务器发送请求报文，服务器传回响应报文。<br>请求报文由请求方法，请求URI，协议版本，可选的请求首部字段和实体内容组成。<br>响应报文基本上由协议版本，状态码（表示请求成功或失败的数字代码），用以解释状态码的原因短语，可选的响应首部字段以及实体主体构成。<br>HTTP协议用URI使客户端定位互联网上的资源，请求URI的方式有很多种<br>一<br>GET <a target="_blank" rel="noopener" href="http://hackr.jp/index.htm">http://hackr.jp/index.htm</a> HTTP&#x2F;1.1<br>二<br>GET &#x2F;index.htm HTTP&#x2F;1.1<br>Host: hackr.jp<br>如果不是访问特定资源而是对服务器本身发起请求，可以用一个* 来代替请求URI。</p>
+        <h1 id="简单的HTTP协议"><a href="#简单的HTTP协议" class="headerlink" title="简单的HTTP协议"></a>简单的HTTP协议</h1><h2 id="HTTP组成"><a href="#HTTP组成" class="headerlink" title="HTTP组成"></a>HTTP组成</h2><p>由客户端向服务器发送请求报文，服务器传回响应报文。<br>请求报文由请求方法，请求URI，协议版本，可选的请求首部字段和实体内容组成。<br>响应报文基本上由协议版本，状态码（表示请求成功或失败的数字代码），用以解释状态码的原因短语，可选的响应首部字段以及实体主体构成。<br>HTTP协议用URI使客户端定位互联网上的资源，请求URI的方式有很多种<br>一<br>GET <a target="_blank" rel="noopener" href="http://hackr.jp/index.htm">http://hackr.jp/index.htm</a> HTTP&#x2F;1.1<br>二<br>GET &#x2F;index.htm HTTP&#x2F;1.1<br>Host: hackr.jp<br>如果不是访问特定资源而是对服务器本身发起请求，可以用一个* 来代替请求URI。</p>
 <h2 id="持久连接"><a href="#持久连接" class="headerlink" title="持久连接"></a>持久连接</h2><p>持久连接的特点只要一端没有明确提出断开连接，则保持TCP连接状态。<br>持久连接的好处减少了TCP连接的重复建立与断开所造成的额外开销，使HTTP请求和响应加快，使web页面更快显示。</p>
 <h2 id="管线化"><a href="#管线化" class="headerlink" title="管线化"></a>管线化</h2><p>能够同时并行发送多个请求，加快请求的结束。</p>
 <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>HTTP是无状态协议，他不对之前发生过的请求和响应进行管理，也就是无法根据之前的状态进行本次的请求处理。<br>例如要求登录认证的web界面无法进行状态管理，那么每次跳转新的界面都要再次登录或者要求每次在请求报文中附加参数来管理登录状态。<br>Cookie会根据从服务器发送的响应报文内一个叫做Set-Cookie的首部字段信息，通知客户端保存cookie。当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中添加cookie值后发送出去。服务器发现客户端发送过来的连接请求，然后对比服务器上的记录最后得到之前的信息。</p>
 
-      
     </div>
 
     
@@ -195,151 +200,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/03/13/%E7%AE%97%E6%B3%95/" rel="prev" title="算法">
+                  <i class="fa fa-chevron-left"></i> 算法
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://iwefwkg.github.io/2023/03/13/%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mxm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/13/%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">算法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-03-13 19:29:29 / Modified: 19:54:06" itemprop="dateCreated datePublished" datetime="2023-03-13T19:29:29+08:00">2023-03-13</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Hash-table"><a href="#Hash-table" class="headerlink" title="Hash table"></a>Hash table</h1><h2 id="leetcode-1-两数之和"><a href="#leetcode-1-两数之和" class="headerlink" title="leetcode 1(两数之和)"></a>leetcode 1(两数之和)</h2><p>利用哈希表，将原数组的值作为哈希表的地址，把原数组的地址作为数值存放在哈希表中。</p>
-<h2 id="leetcode"><a href="#leetcode" class="headerlink" title="leetcode"></a>leetcode</h2>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://iwefwkg.github.io/2023/03/12/operating-system/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="mxm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/12/operating-system/" class="post-title-link" itemprop="url">operating system</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-03-12 22:01:02 / Modified: 22:16:42" itemprop="dateCreated datePublished" datetime="2023-03-12T22:01:02+08:00">2023-03-12</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>你好</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
