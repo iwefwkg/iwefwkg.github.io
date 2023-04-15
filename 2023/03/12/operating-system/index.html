@@ -19,17 +19,22 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"iwefwkg.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="你好">
+    <meta name="description" content="此科目主要关注发生在内核内部的事情，还有用户程序和内核之间的接口，以及内核内部的软件结构。以及应用程序与内核的交互，和相关接口定义。 lecture 1-introduction and example操作系统的共同目标 abstract hardware 硬件的抽象Abstraction ，将复杂问题简单化，使程序员专注在重要的部分。抽象就是把一个问题或模型，以不同的规则和方法得到不同的解（求解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="operating system">
 <meta property="og:url" content="http://iwefwkg.github.io/2023/03/12/operating-system/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="你好">
+<meta property="og:description" content="此科目主要关注发生在内核内部的事情，还有用户程序和内核之间的接口，以及内核内部的软件结构。以及应用程序与内核的交互，和相关接口定义。 lecture 1-introduction and example操作系统的共同目标 abstract hardware 硬件的抽象Abstraction ，将复杂问题简单化，使程序员专注在重要的部分。抽象就是把一个问题或模型，以不同的规则和方法得到不同的解（求解">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://iwefwkg.github.io/2023-03-16-17-13-47.png">
+<meta property="og:image" content="http://iwefwkg.github.io/2023-04-06-22-41-31.png">
+<meta property="og:image" content="http://iwefwkg.github.io/2023-04-07-22-58-04.png">
+<meta property="og:image" content="http://iwefwkg.github.io/2023-04-08-14-47-23.png">
 <meta property="article:published_time" content="2023-03-12T14:01:02.000Z">
-<meta property="article:modified_time" content="2023-03-12T14:16:42.114Z">
+<meta property="article:modified_time" content="2023-04-11T06:55:52.577Z">
 <meta property="article:author" content="mxm">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://iwefwkg.github.io/2023-03-16-17-13-47.png">
 
 
 <link rel="canonical" href="http://iwefwkg.github.io/2023/03/12/operating-system/">
@@ -91,7 +96,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -104,6 +109,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-1-introduction-and-example"><span class="nav-number">1.</span> <span class="nav-text">lecture 1-introduction and example</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%85%B1%E5%90%8C%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.</span> <span class="nav-text">操作系统的共同目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">操作系统的组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API-KERNEL-%E5%86%85%E6%A0%B8%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.3.</span> <span class="nav-text">API KERNEL 内核接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E7%AE%80%E4%BB%8B"><span class="nav-number">1.4.</span> <span class="nav-text">Unix系统调用简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">1.4.1.</span> <span class="nav-text">文件描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell"><span class="nav-number">1.4.2.</span> <span class="nav-text">shell</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-3-Operating-system-Organization"><span class="nav-number">2.</span> <span class="nav-text">Lecture 3 Operating system Organization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#isolation"><span class="nav-number">2.1.</span> <span class="nav-text">isolation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kernel-mode-x2F-user-mode"><span class="nav-number">2.2.</span> <span class="nav-text">kernel mode&#x2F;user mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#system-call"><span class="nav-number">2.3.</span> <span class="nav-text">system call</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xv6%E4%BB%A3%E7%A0%81"><span class="nav-number">2.4.</span> <span class="nav-text">xv6代码</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -172,9 +178,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-03-12 22:01:02 / Modified: 22:16:42" itemprop="dateCreated datePublished" datetime="2023-03-12T22:01:02+08:00">2023-03-12</time>
+      <time title="Created: 2023-03-12 22:01:02" itemprop="dateCreated datePublished" datetime="2023-03-12T22:01:02+08:00">2023-03-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-11 14:55:52" itemprop="dateModified" datetime="2023-04-11T14:55:52+08:00">2023-04-11</time>
     </span>
 
   
@@ -187,8 +199,41 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>你好</p>
-
+        <p><strong>此科目主要关注发生在内核内部的事情，还有用户程序和内核之间的接口，以及内核内部的软件结构。以及应用程序与内核的交互，和相关接口定义。</strong></p>
+<h1 id="lecture-1-introduction-and-example"><a href="#lecture-1-introduction-and-example" class="headerlink" title="lecture 1-introduction and example"></a>lecture 1-introduction and example</h1><h2 id="操作系统的共同目标"><a href="#操作系统的共同目标" class="headerlink" title="操作系统的共同目标"></a>操作系统的共同目标</h2><ol>
+<li><em><strong>abstract hardware</strong></em> 硬件的抽象<br><strong>Abstraction</strong> ，<em>将复杂问题简单化，使程序员专注在重要的部分。抽象就是把一个问题或模型，以不同的规则和方法得到不同的解（求解方法和解本身就是抽象层），这些不同的抽象层可以组合并还原成问题或模型本身。</em><br>从计算机的cpu，硬盘，内存等一个低水平，到高水平层次的抽象化，可以是我们使用应用程序，如为了方便和移植性而产生的进程或文件系统。</li>
+<li><em><strong>multiplex</strong></em> 应用程序对硬件的多路复用<br>同时运用多个应用程序并且不会相互干扰</li>
+<li><em><strong>Isolation</strong></em> 隔离性<br>不同的活动不应该互相干涉。</li>
+<li><em><strong>sharing</strong></em><br>在需要时，可以相互干涉，或者在需要干涉来交互或协作。</li>
+<li><em><strong>security or permission system</strong></em> 安全系统或权限系统<br>能控制文件或应用的分享与保密</li>
+<li><em><strong>performance</strong></em> 性能<br>能够帮助应用程序获得良好的硬件性能</li>
+<li><em><strong>range of uses</strong></em> 各种不同用途<br>同一个操作系统能够支持使用各种不同的应用与用途</li>
+</ol>
+<h2 id="操作系统的组成"><a href="#操作系统的组成" class="headerlink" title="操作系统的组成"></a>操作系统的组成</h2><p><img src="/2023-03-16-17-13-47.png"><br>硬件位于底层，应用程序位于顶层。应用程序的这个地方称作用户空间（<em><strong>Userspace</strong></em>）<br><strong>内核</strong>（<em><strong>KERNEL</strong></em>）一直处于运行中，是计算机资源的守护者。在开机时第一个启动，只有一个内核来管理数据。以帮助管理顶层进程，也意味着大量数据结构帮助访问。帮助管理用户程序所需要使用的不同类型的硬件。<br><strong>进程</strong>（<em>运行的程序</em>）<br>内核也内置了很多服务，例如：  </p>
+<ol>
+<li>FS 文件系统（实现了文件名，文件内容和目录之类的；并将文件存在磁盘中）应用程序访问内核中的文件，然后文件系统访问磁盘。</li>
+<li>process  对进程的管理，每个进程它有自己的内存，共享cpu时间。内核将进程作为内核服务进行管理。</li>
+<li>memory 内核管理内存的分配，不同的进程需要不同数量的内存，内核复用、划分内存，为所用不同的进程分配内存。</li>
+<li>访问控制，进程想要读取，使用资源时，是由内核决定的。可以决定进程是否能够读取硬盘或使用内存。</li>
+</ol>
+<h2 id="API-KERNEL-内核接口"><a href="#API-KERNEL-内核接口" class="headerlink" title="API KERNEL 内核接口"></a>API KERNEL 内核接口</h2><p>应用程序通过系统调用访问内核（与程序使用的函数调用类似），实际上是跳入内核，并在执行内核中实现系统调用。<br>内核可以获得系统调用的参数，并执行一些实现系统调用的内核代码。<br><strong>系统调用是操作系统提供服务的接口。</strong><br><strong>传递一个整数，比如文件描述符和进程id，作为系统调用的参数传递。</strong></p>
+<h2 id="Unix系统调用简介"><a href="#Unix系统调用简介" class="headerlink" title="Unix系统调用简介"></a>Unix系统调用简介</h2><h3 id="文件描述符"><a href="#文件描述符" class="headerlink" title="文件描述符"></a>文件描述符</h3><p><em>程序是静态的，进程是动态的。程序是有序代码的集合，进程是程序的执行。</em><br>作用就是索引到内核中一个维护状态的表中，内核为每个进程记住一个表，表中通过文件描述符进行索引（为每个正在运行的进程用文件描述符提供索引），这张表告诉内核每个文件描述符引用的是什么。<br>每个进程都有自己的文件描述符空间。因此，在运行两个不同的进程前，两个不同的程序都会打开一个文件，它们可能会得到相同的文件描述符编号，但是因为<strong>内核为每个进程维护单独的文件描述符</strong>，所以相同的文件描述符在不同的进程中可能引起不同的文件。</p>
+<h3 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h3><p>通常称作命令行接口，相对更图形化的用户界面。shell是unix的一种最传统最基本的接口，对unix系统的系统管理提供了很多实用程序，来处理文件，开发程序，以及编写脚本来完成这些事。<br>Shell指令的本质：<br>例如mkdir指令，实际上它是存在于这台计算机上的一个可执行文件，一个程序，输入mkdir指令时会运行这个程序，来完成一些功能。</p>
+<p>在一些pwn题中，拿到靶机的shell后会发现能够使用的指令很少，应该就是因为靶机削减了一些不必要的的指令程序。</p>
+<ol>
+<li>fork<br>创建一个调用进程的指令和数据的内存的复制，使用之后会有两个使用相同内存的进程，两个进程都有自己不同的地址空间，它们都认为自己的内存从0开始向上增长，但是其实是不同的内存。<br>子进程的文件描述符表是复制的，如果父进程打开一些文件，子进程也会看到一组相同的文件描述符。<br>fork系统调用在两个进程中都会返回，原始进程中fork返回进程id，它是一个<strong>大于零的整数</strong>，<strong>新进程中fork返回0</strong>。<br>在调用fork后，两个进程几乎会同时进行，所以它们产生的输出是交错的。<br>fork创建了一个新进程，<strong>当我们在shell中运行东西时，shell实际上创建了一个新进程来运行你输入的指令，但它需要在其中运行命令。</strong>。如果输入ls，需要shell fork 创建一个新进程运行ls，但这个新进程需要一些方法，来实际运行ls程序中的指令。</li>
+<li>exec<br>exec是一个系统调用，<strong>使用指定的文件中读取的指令替换调用的进程</strong>。从文件中加载指令，覆盖当前进程，丢弃当前内存，然后执行这些指令，用新程序覆盖这个程序的上下文和内存空间。保留了当前文件描述符表，之前的文件描述符代表什么，在新程序也引用相同的东西。</li>
+</ol>
+<p><img src="/2023-04-06-22-41-31.png"></p>
+<p>exec在第12行，使操作系统从echo文件中加载指令，在当前进程中，替换当前进程的内存，然后开始执行那些指令。并且可以传递参数，echo exec允许传递一组命令行参数（它只是c语言中的一组字符指针）。<br>第10行设置了一组字符指针，本质上是字符串，并且将该数组初始化为包含字符串 “echo this is echo”。这相当于在命令行允许echo，使用参数，this is “echo”（参数）。每个在双引号中的字符串实际上是一个指向内存中包含这些字节的指针，最后的0是值为0的指针，相当于空指针，内核遍历整个数组，直到找到该空指针。<br>在命令行直接允许exec，输出“this is echo”。即使我们运行的是exec程序，该程序说，做的是调用exec系统调用，将其自身换为echo，所以实际上就是echo程序，产生这个输出。<br>原始的exec不会返回，因为echo完全替换了当前进程内存，没有什么东西让exec返回，因为它读取文件中的指令，并执行他们。只有发生错误的时候,在内核不能运行文件时返回，导致操作系统无法运行该程序，比如：程序根本不存在，exec找不到名为echo的文件，exec将返回-1，表示出现错误。<br>3. forkexec<br><img src="/2023-04-07-22-58-04.png"><br>程序使用文件中的另一个程序替换自己的过程，但实际上我们在shell中运行东西，例如：echo 或者ls，我们不希望替换掉shell，shell只是调用exec，因为那样echo会替换掉shell，那样就全部结束了，所以shell要做的是fork，然后用子进程调用exec。对于父进程，重新获得了控制权，因为当fork返回时，在父进程返回一个大于零的值，所以父进程继续执行下面指令。这就是unix惯用程序，<strong>想要运行一个程序，并重新获得控制权，要做的就是调用fork，然后子进程调用exec</strong><br>第20行，进程等待fork创建的子进程，当我们在命令行运行一条命令，在它重新输出提示符（$）等待我输入更多之前，我们希望shell等待。（等待是偶然的情况，父进程和子进程输出相交错，子进程调用了exec，需要访问磁盘丢弃旧内存分配新内存等机器指令），所以wait系统调用运行进程，等待子进程返回。第17行推出参数为1，系统将1从退出的子进程传递给第20行的wait。所以wait将状态变量地址（&amp;status）传递给内核，内核使用子进程退出的参数填充该地址。wait会返回子进程的id，在有多个子进程时，可以通过wait返回区分是哪一个子进程退出了。<br>unix约定，如果一个程序成功退出，退出码是0，并且不会执行下面的failed和exit 1。但是在第17行中约定这里的退出码是1,如果出现错误时，exec返回原来的调用函数继续执行下面的语句，并且返回1。如果没有子进程，wait会直接返回-1错误。<br>复制内存是指，程序在编译之后会变成内存中的一些机器指令，驻留在内存中，只是内存中的一些字节，可以复制到其他地方，可以通过设置虚拟内存映射使子进程和父进程看起来一样。<br>4. redirect IO重定向</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls &gt; out</span><br></pre></td></tr></table></figure>
+<p>此时ls没有任何输出，out内包含一些数据。<br>执行<strong>cat命令读取文件并显示其中的内容</strong>，此时输出和ls的输出是一样的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat out </span><br></pre></td></tr></table></figure>
+<p>grep x命令通过模式搜索，它会搜索包含x的输入行，我们也可以告诉shell把grep的输入重定向到out文件,用来查找保存ls结果中的x实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep x &lt; out</span><br></pre></td></tr></table></figure>
+<p>只是对echo的输出重定向，所以运行redirect，不会产生输出，只会运行echo并把它的输出定向到output.txt文件。echo输出到文件描述符1，就会写入到output.txt，但echo并不知道发生了重定向，只有shell知道发生了重定向。<br><img src="/2023-04-08-14-47-23.png"><br>通常，大多数程序使用文件描述符1作为输出。在子进程，shell将子进程的文件描述符1修改为指向输出文件，同时保留了父进程shell的文件描述符1不变。这种在子进程修改文件描述符的方法，是unix的常用方法，重定向运行的命令的输入输出，但是不影响调用程序的输入输出，因为我们不想重定向shell的输出。<br>第15行关闭文件描述符1的原因，我们想把输出文件描述符1，指向别的东西（<strong>子进程不能直接使用父进程的1，因为shell使用1连接控制台</strong>）。然后在第16行使用open，因为open调用返回没有被当前程序使用的最小的文件描述符，而我们关闭了1，0仍然连接到控制台。</p>
+<h1 id="Lecture-3-Operating-system-Organization"><a href="#Lecture-3-Operating-system-Organization" class="headerlink" title="Lecture 3 Operating system Organization"></a>Lecture 3 Operating system Organization</h1><h2 id="isolation"><a href="#isolation" class="headerlink" title="isolation"></a>isolation</h2><p>kernel mode 和user mode 是内核或操作系统与用户隔离的一种方式</p>
+<h2 id="kernel-mode-x2F-user-mode"><a href="#kernel-mode-x2F-user-mode" class="headerlink" title="kernel mode&#x2F;user mode"></a>kernel mode&#x2F;user mode</h2><h2 id="system-call"><a href="#system-call" class="headerlink" title="system call"></a>system call</h2><h2 id="xv6代码"><a href="#xv6代码" class="headerlink" title="xv6代码"></a>xv6代码</h2>
     </div>
 
     
